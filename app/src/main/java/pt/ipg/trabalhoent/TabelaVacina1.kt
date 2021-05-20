@@ -11,7 +11,18 @@ class TabelaVacina1(db: SQLiteDatabase) {
     fun cria() {
         db.execSQL(
                 " CREATE TABLE " + NOME_TABELA + "(" +
-                        BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + CAMPO_NOME + " TEXT NOT NULL " + ")"
+                        BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        CAMPO_NOME + " TEXT NOT NULL " +
+                        CAMPO_IDADE + " TEXT NOT NULL, " +
+                        CAMPO_NIF + "  INTEGER NULL, " +
+                        CAMPO_DATA_VACINA1 + " DATA NOT NULL, " +
+                        CAMPO_ID_NAOVACINADOS + " INTEGER, " +
+                        CAMPO_ID_VACINADOS + " INTEGER, " +
+                        " FOREIGN KEY ("+ CAMPO_ID_NAOVACINADOS +") " +
+                        " REFERENCES " + TabelaVacina1.NOME_TABELA +
+                        " FOREIGN KEY ("+ CAMPO_ID_VACINADOS +") " +
+                        " REFERENCES " + TabelaVacinados.NOME_TABELA +
+                        ")"
         )
     }
 
@@ -43,5 +54,10 @@ class TabelaVacina1(db: SQLiteDatabase) {
     companion object{
         const val NOME_TABELA = "vacina1"
         const val CAMPO_NOME = "nome"
+        const val CAMPO_IDADE = "idade"
+        const val CAMPO_NIF = "nif"
+        const val CAMPO_DATA_VACINA1 = "data_vacina1"
+        const val CAMPO_ID_NAOVACINADOS = "id_naoVacinados"
+        const val CAMPO_ID_VACINADOS = "id_vacinados"
     }
 }
