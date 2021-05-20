@@ -19,7 +19,7 @@ class TabelaVacina1(db: SQLiteDatabase) {
                         CAMPO_ID_NAOVACINADOS + " INTEGER, " +
                         CAMPO_ID_VACINADOS + " INTEGER, " +
                         " FOREIGN KEY ("+ CAMPO_ID_NAOVACINADOS +") " +
-                        " REFERENCES " + TabelaVacina1.NOME_TABELA +
+                        " REFERENCES " + TabelaNaoVacinados.NOME_TABELA +
                         " FOREIGN KEY ("+ CAMPO_ID_VACINADOS +") " +
                         " REFERENCES " + TabelaVacinados.NOME_TABELA +
                         ")"

@@ -14,8 +14,8 @@ class TabelaNaoVacinados(db: SQLiteDatabase) {
                 CAMPO_NOME + " TEXT NOT NULL, " +
                 CAMPO_IDADE+ " TEXT NOT NULL, " +
                 CAMPO_NIF+ "  INTEGER NULL, " +
-                CAMPO_DATA_MARCACAO+ " DATA NOT NULL, " +
-                CAMPO_ID_VACINA1 + " INTEGER, " +
+                CAMPO_DATA_VACINA1+ " DATA NOT NULL, " +
+                CAMPO_ID_VACINA1 + " DATA NOT NULL, " +
                 CAMPO_ID_VACINADOS + " INTEGER, " +
                 " FOREIGN KEY ("+ CAMPO_ID_VACINA1 +") " +
                 " REFERENCES " + TabelaVacina1.NOME_TABELA +
@@ -54,7 +54,7 @@ class TabelaNaoVacinados(db: SQLiteDatabase) {
         const val CAMPO_NOME = "nome"
         const val CAMPO_IDADE = "idade"
         const val CAMPO_NIF = "nif"
-        const val CAMPO_DATA_MARCACAO = "data_marcacao"
+        const val CAMPO_DATA_VACINA1 = "data_marcacao"
         const val CAMPO_ID_VACINA1 = "id_vacina1"
         const val CAMPO_ID_VACINADOS = "id_vacinados"
     }
