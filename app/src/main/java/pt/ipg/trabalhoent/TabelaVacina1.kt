@@ -54,7 +54,7 @@ class TabelaVacina1(db: SQLiteDatabase) {
     companion object{
         const val NOME_TABELA = "vacina1"
         const val CAMPO_NOME = "nome"
-        const val CAMPO_DATA_NASCIMENTO = "idade"
+        const val CAMPO_DATA_NASCIMENTO = "data_de_nascimento"
         const val CAMPO_NIF = "nif"
         const val CAMPO_DATA_VACINA1 = "data_vacina1"
         const val CAMPO_ID_NAOVACINADOS = "id_naoVacinados"
