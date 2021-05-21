@@ -12,10 +12,10 @@ class TabelaNaoVacinados(db: SQLiteDatabase) {
         db.execSQL("CREATE TABLE " + NOME_TABELA + "(" +
                 BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 CAMPO_NOME + " TEXT NOT NULL, " +
-                CAMPO_IDADE+ " TEXT NOT NULL, " +
-                CAMPO_NIF+ "  INTEGER NULL, " +
-                CAMPO_DATA_VACINA1+ " DATA NOT NULL, " +
-                CAMPO_ID_VACINA1 + " DATA NOT NULL, " +
+                CAMPO_DATA_NASCIMENTO+ " DATE NOT NULL, " +
+                CAMPO_NIF+ "  INTEGER NOT NULL, " +
+                CAMPO_DATA_VACINA1+ " DATE NOT NULL, " +
+                CAMPO_ID_VACINA1 + " DATE NOT NULL, " +
                 CAMPO_ID_VACINADOS + " INTEGER, " +
                 " FOREIGN KEY ("+ CAMPO_ID_VACINA1 +") " +
                 " REFERENCES " + TabelaVacina1.NOME_TABELA +
@@ -52,7 +52,7 @@ class TabelaNaoVacinados(db: SQLiteDatabase) {
     companion object{
         const val NOME_TABELA = "NaoVacinados"
         const val CAMPO_NOME = "nome"
-        const val CAMPO_IDADE = "idade"
+        const val CAMPO_DATA_NASCIMENTO = "data de nascimento"
         const val CAMPO_NIF = "nif"
         const val CAMPO_DATA_VACINA1 = "data_marcacao"
         const val CAMPO_ID_VACINA1 = "id_vacina1"
